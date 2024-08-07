@@ -1,0 +1,17 @@
+{
+  "bracketSpacing": true,
+  "printWidth": 80,
+  "quoteProps": "as-needed",
+  "semi": true,
+  "trailingComma": "all",
+  "overrides": [
+    {
+      "files": [
+        "*.js"
+      ],
+      "options": {
+        "trailingComma": "es5"
+      }
+    }
+  ]
+}

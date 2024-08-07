@@ -1,0 +1,12 @@
+# Ignore files:
+
+_.d.ts
+_.html
+_.json
+_.yaml
+\*.yml
+
+# Ignore artifacts:
+
+dist/
+node_modules/

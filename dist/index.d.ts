@@ -1,1 +1,1 @@
-export declare function foo(str: string): void;
+export * from 'public-api';

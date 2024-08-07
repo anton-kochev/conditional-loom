@@ -1,15 +1,22 @@
 {
   "name": "conditional-loom",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts"
   },
   "keywords": [],
   "author": "Anton Kochev",
   "license": "MIT License",
   "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "prettier": "^3.3.3",
+    "ts-jest": "^29.2.4",
     "typescript": "^5.3.3"
   }
 }
