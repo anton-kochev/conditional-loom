@@ -1,6 +1,5 @@
-// tests/foo.test.ts
-import { it } from '../src/it';
-import { Predicate } from '../src/types';
+// test public api
+import { and, it, or, Predicate } from '../src/index';
 
 test('`it` should be properly imported', () => {
   expect(it).toBeDefined();
@@ -34,4 +33,32 @@ test('`it` should cancel the execution if one of the conditions returns false', 
 
   expect(result).toBe(false);
   expect(a).toBe(1);
+});
+
+test('`it` should work with nested conditions', () => {
+  // 20 .. 40, 60 .. 80.
+  const condition = and(
+    and(
+      () => a > 0,
+      () => a < 100,
+    ),
+    or(
+      () => a < 40,
+      () => a > 60,
+    ),
+    () => a >= 20,
+    () => a <= 80,
+  );
+
+  let a = 50;
+
+  expect(it(condition)).toBe(false);
+
+  a = 80;
+
+  expect(it(condition)).toBe(true);
+
+  a = 19;
+
+  expect(it(condition)).toBe(false);
 });
